@@ -2,13 +2,24 @@
 
 <h1>Products</h1>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+<div id="products" class="row">
+  <% @products.each_with_index do |product, index| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <p class="card-text">Price: <%= number_to_currency(product.price) %></p>
+          <%= link_to "Show this product", product, class: "btn btn-primary" %>
+          <%= link_to 'Add to Cart', cart_path(id: product.id), method: :get, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <% if (index + 1) % 3 == 0 %>
+      <div> <br /></div> <!-- Empty column for spacing -->
+    <% end %>
   <% end %>
 </div>
-
-<%= link_to "New product", new_product_path %>
+<br />
+<%= link_to "New product", new_product_path, class: "btn btn-outline-secondary" %>

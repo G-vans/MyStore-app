@@ -1,6 +1,26 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  #add to cart
+  def add_to_cart
+    @product = Product.find(params[:id])
+    @cart << @product.id
+    redirect_to products_path, notice: 'Product added to cart successfully!'
+  end
+
+  def remove_from_cart
+    @product = Product.find(params[:id])
+    @cart.delete(@product.id)
+    redirect_to collect_path, notice: 'Product removed from cart successfully!'
+  end
+
+  #view the cart collection
+  def cart
+    @cart_products = Product.where(id: @cart)
+    @missing_product_ids = @cart - @cart_products.pluck(:id)
+  end
+   
+
   # GET /products or /products.json
   def index
     @products = Product.all
@@ -8,7 +28,9 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    @product = Product.find(params[:id])
   end
+  
 
   # GET /products/new
   def new
@@ -49,10 +71,11 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to products_path, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
   end
