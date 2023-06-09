@@ -23,7 +23,7 @@ MyStore App is a web application that allows users to browse and purchase produc
 To run the MyStore App on your local machine, follow these steps:
 
 1. Make sure you have Ruby and Rails installed on your system.
-2. Clone this repository: `git clone https://github.com/your-username/mystore-app.git`
+2. Clone this repository: `git clone git@github.com:G-vans/MyStore-app.git`
 3. Navigate to the project directory: `cd mystore-app`
 4. Install dependencies: `bundle install`
 5. Set up the database: `rails db:migrate`
