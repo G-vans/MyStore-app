@@ -47,6 +47,7 @@ test:
   password:
 
 production:
+  url: <%= ENV["DATABASE_URL"] %>
   adapter: postgresql
   encoding: unicode
   database: mystore_postgres_production
