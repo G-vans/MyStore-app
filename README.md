@@ -18,6 +18,12 @@ MyStore App is a web application that allows users to browse and purchase produc
 - JavaScript: Enhances interactivity and dynamic features on the client-side.
 - Bootstrap: A popular CSS framework for designing responsive and mobile-first web pages.
 
+## Screenshot
+
+![MyStore App Screenshot](app/assets/images/Screenshot1.jpeg)
+
+![MyStore App Screenshot](app/assets/images/Screenshot2.jpeg)
+
 ## Getting Started
 
 To run the MyStore App on your local machine, follow these steps:
