@@ -1,4 +1,12 @@
 <div id="<%= dom_id product %>">
+<div class="image-box">
+    <%= image_tag "image1.jpg", class: "product-image" %>
+    <br />
+  <br />
+  <br />
+  </div>
+  
+  <div class="product-dets">
   <p>
     <strong>Name:</strong>
     <%= product.name %>
@@ -14,4 +22,11 @@
     <%= product.description %>
   </p>
 
+  <%= link_to "Back", products_path, class: "btn btn-outline-secondary" %> | 
+  <%= link_to "Delete", @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %> | 
+  <%= link_to 'Add to Cart', cart_path(id: product.id), method: :get, class: 'btn btn-outline-primary' %>
+  <br />
+  <br />
+</div>
+  
 </div>

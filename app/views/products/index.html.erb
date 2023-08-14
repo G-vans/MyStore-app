@@ -1,4 +1,7 @@
 <p style="color: green"><%= notice %></p>
+<br />
+<br />
+<br />
 
 <h1>Products</h1>
 
@@ -6,6 +9,9 @@
   <% @products.each_with_index do |product, index| %>
     <div class="col-md-4">
       <div class="card">
+      <%= link_to product_path(product) do %>
+          <%= image_tag "image1.jpg", class: "card-img-top fixed-size" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>

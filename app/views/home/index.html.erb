@@ -1,17 +1,63 @@
 <div class="homepage-container">
   <div class="image-container">
-    <%= image_tag "image1.jpg", class: "background-image" %>
     <div class="overlay-text">
-      <h1>Welcome to MyStore App</h1>
+      <h1>Welcome to <span style="color: #d64d00;">MyStore App</span></h1>
       <p>Discover the perfect accessory to complete your outfit. Our handcrafted leather wallets combine style and functionality, with ample storage for cards and cash.</p>
-      <%= link_to "Browse Products", products_path, class: "btn btn-primary" %>
+      <%= link_to "Browse Products", products_path, class: "btn btn-primary", style: "color: #d64d00;" %>
+      <br />
+      <br />
+      <div class="search-box">
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Search Products..." aria-label="Search">
+          <button type="submit" class="btn btn-success" style="background-color: #d64d00;">Search</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<div class="text-center">
+  <h1>Trusted Brands</h1>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-3">
+    <div class="brand-icons">
+      <a href="https://www.freepnglogos.com/pics/amazon-png-logo-vector" title="Image from freepnglogos.com">
+        <img src="https://www.freepnglogos.com/uploads/microsoft-logo-png-transparent-background-1.png" alt="Amazon" class="brand-icon-amazon">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="brand-icons">
+      <a href="https://www.freepnglogos.com/pics/google-logo" title="Image from freepnglogos.com">
+        <img src="https://www.freepnglogos.com/uploads/google-logo-png/file-google-logo-svg-wikimedia-commons-23.png" alt="Google" class="brand-icon-amazon2">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="brand-icons">
+      <a href="https://www.freepnglogos.com/pics/coca-cola-png" title="Image from freepnglogos.com">
+        <img src="https://www.freepnglogos.com/uploads/coca-cola-png/coca-cola-logopedia-fandom-powered-wikia-13.png" alt="CocaCola" class="brand-icon-amazon2">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="brand-icons">
+      <a href="https://www.freepnglogos.com/pics/samsung-logo-png" title="Image from freepnglogos.com">
+        <img src="https://www.freepnglogos.com/uploads/walmart-logo-20.jpg" alt="Samsung" class="brand-icon-amazon">
+      </a>
+    </div>
+  </div>
+</div>
+<hr />
+<br />
 <br />
 
 <div class="text-center">
-  <h1>Products</h1>
+  <p style="color: #d64d00;">Check our Products</p>
+  <h1 style="font-size: 46px;">Crafted from excellent brands</h1>
+  <p class="lorem-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 </div>
 
 <div class="row">
@@ -24,24 +70,102 @@
         <div class="card-body">
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>
-          <p class="card-text"><%= number_to_currency(product.price) %></p>
+          <div class="d-flex justify-content-between">
+            <p class="card-text" style="font-weight: 400;"><%= number_to_currency(product.price) %></p>
+            <%= link_to cart_path(id: product.id), method: :get do %>
+              <i class="fas fa-shopping-cart"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
+
 <br />
 <div class="text-center">
   <%= link_to "View More", products_path, class: "btn btn-primary" %>
 </div>
+<hr />
 <br />
-<section class="about-section">
+
+<div class= "row testimonial">
+  <h1 class="text-center" style="font-size: 46px;"> What Our Customer Say </h1>
+  <p class="text-center lorem-text"> Lorem Ipsum is simple dummy text of the printing and typesetting industry. </p>
+</div>
+<br />
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-quote-left quote-icon"></i>
+            <div class="card-body">
+              <p class="card-text2">I've always been hesitant about buying furniture online, but this website exceeded my expectations. The selection is incredible, offering a wide range of styles to suit any taste. I'm grateful for the excellent customer service throughout the process. This website has won my trust, and I'll be recommending it to all my friends!</p>
+            </div>
+            <div class="name-section d-flex align-items-center">
+              <%= image_tag "person-1.jpg", alt: "Person Image", class: "person-image" %>
+              <span class="person-name">John Doe</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-quote-left quote-icon"></i>
+            <div class="card-body">
+              <p class="card-text2">I've always been hesitant about buying furniture online, but this website exceeded my expectations. The selection is incredible, offering a wide range of styles to suit any taste. I'm grateful for the excellent customer service throughout the process. This website has won my trust, and I'll be recommending it to all my friends!</p>
+            </div>
+            <div class="name-section d-flex align-items-center">
+              <%= image_tag "person-1.jpg", alt: "Person Image", class: "person-image" %>
+              <span class="person-name">John Doe</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <i class="fas fa-quote-left quote-icon"></i>
+            <div class="card-body">
+              <p class="card-text2">I've always been hesitant about buying furniture online, but this website exceeded my expectations. The selection is incredible, offering a wide range of styles to suit any taste. I'm grateful for the excellent customer service throughout the process. This website has won my trust, and I'll be recommending it to all my friends!</p>
+            </div>
+            <div class="name-section d-flex align-items-center">
+              <%= image_tag "person-1.jpg", alt: "Person Image", class: "person-image" %>
+              <span class="person-name">John Doe</span>
+            </div>
+        </div>
+      </div>
+
+    </div>
+<br />
+<h3 class="text-center card-title"> Subscribe to get attractive offers </h3>
+<br />
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4 d-flex justify-content-center"> <!-- Use d-flex and justify-content-center to center the search-box -->
+    <div class="search-box">
+      <div class="input-group">
+        <input class="form-control" type="search" placeholder="Enter your email address..." aria-label="Search">
+        <button type="submit" class="btn btn-success" style="background-color: #d64d00;">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+
+
+<br />
+<%
+=begin%>
+ <section class="about-section">
   <div class="container">
     <h2>About Us</h2>
     <p>Welcome to our online store! We are dedicated to providing high-quality products that meet your needs. With a wide selection of items, we aim to be your go-to destination for all your shopping desires. Our team is committed to delivering exceptional customer service and ensuring a seamless shopping experience. Explore our collection and find the perfect products that suit your style and preferences.</p>
   </div>
-</section>
+</section> 
+<%
+=end%>
 <br />
 <br />
 

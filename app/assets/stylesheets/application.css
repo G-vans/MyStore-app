@@ -1,22 +1,22 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
  
 * {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
   }
+
+  .top-nav {
+    background-color: #dbdbdb;
+    margin-bottom: 20px;
+  }
+  .nav-items {
+    font-weight: 300;
+    font-size: 20px;
+   }
+
+.nav-logo {
+  color: #d64d00;
+  font-weight: bolder;
+  font-size: 35px;
+}
   
  .homepage-container {
     position: relative;
@@ -44,10 +44,36 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #F5F5F5;
+    color: #121212;
     text-align: center;
   }
 
+  .overlay-text h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 72px;
+  }
+
+  .overlay-text p {
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  /* brand icon amazon */
+  .brand-icon-amazon {
+    max-width: 70%;
+  }
+  .brand-icon-amazon2 {
+    max-width: 50%;
+  }
+/* products */
+.lorem-text {
+  /* color: #505050; */
+  font-size: 15px; /* Adjust the font size as needed */
+  white-space: normal;
+  max-width: 450px; /* Adjust the max-width to control where the text wraps */
+  margin: 0 auto; /* Optional - centers the text within the container */
+  font-weight: 300;
+}
   .overlay-image {
     position: fixed;
     width: 85%;
@@ -73,6 +99,90 @@
     height: 200px; /* Adjust the height as needed */
     object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the designated space */
   }
+  .card-title, .card-text {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .add-to-cart-link {
+    display: inline-block;
+    margin-left: 10px; /* Adjust the margin as needed */
+    color: #007bff; /* Customize the link color */
+    text-decoration: none;
+  }
+  /* testimonials */
+  .card-text2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+    letter-spacing: -2%;
+  }
+  /* Styles for the quote icon */
+.quote-icon {
+  font-size: 30px;
+  color: #5C59D4;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/* Styles for the person image */
+.person-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Styles for the person name */
+.person-name {
+  font-size: 14px;
+  color: #333;
+}
+.name-section {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+/* footer */
+.footer-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #fff;
+}
+.footer-cat {
+  color: #fff;
+  font-weight: 200;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+.footer-con {
+  padding-top: 25px;
+}
+/*show image product*/
+.image-box {
+  float: left; /* To make the container float to the left of the screen */
+  width: 350px; /* Set the width of the container, adjust as needed */
+  height: 400px;
+  padding: 10px; /* Add some padding around the image */
+  /* margin-bottom: 80px; */
+}
+
+/* Style for the image inside the container */
+.product-image {
+  width: 100%; /* Make the image fill the width of the container */
+  display: block; /* Remove any default spacing between the image and other elements */
+  margin-top: 0; /* Add some top margin to create space between the image and the text */
+}
+
+.product-dets {
+  float: right;
+  margin-right: 150px;
+}
+
+  
   
   
   

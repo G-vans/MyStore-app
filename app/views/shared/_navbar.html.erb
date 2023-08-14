@@ -1,62 +1,50 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary top-nav fixed-top">
   <div class="container-fluid">
-  <%= link_to "MyStore", root_path, class: "navbar-brand"%>
+    <%= link_to "MyStore", root_path, class: "navbar-brand nav-logo"%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center nav-items">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link active"%>
+          <%= link_to "Home", root_path, class: "nav-link active", style: "margin-right: 52px;" %>
         </li>
         <li class="nav-item">
-        <%= link_to "Products", products_path, class: "nav-link"%>
+          <%= link_to "Products", products_path, class: "nav-link", style: "margin-right: 52px;" %>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link disabled-link">Orders</a>
+          <a href="#" class="nav-link disabled-link" style="margin-right: 52px;">Orders</a>
         </li>
         <li class="nav-item">
-        <%= link_to "Cart", collect_path, class: "nav-link"%>
+          <%= link_to collect_path, class: "nav-link cart-link", style: "margin-right: 10px;" do %>
+            Cart <i class="fas fa-shopping-cart"></i> <!-- Font Awesome icon for shopping cart -->
+          <% end %>
         </li>
-        </ul>
+      </ul>
 
-        <ul class= "navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
-            <li class= "nav-item">
-            <a class="nav-link" href="/">You are now logged in as <%= current_user.username %> </a>
-            </li>
-            <li class= "nav-item">
-            <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
-            </li>
-            <% else %>
-            <li class= "nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link"%>
-            </li>
-            <li class= "nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "nav-link"%>
-            </li>
-            <% end %>
-        </ul>
-
-
-
-        
-
-
-
-
-        <%
-=begin%>
- <button class= "btn btn-primary">
-        <%= link_to "Sign_up", sign_up_path, class: "nav-link"%>
-        </button>
-        <%= tag.br %>
-
-        <button class= "btn btn-primary">
-        <%= link_to "Sign_in", sign_in_path, class: "nav-link"%>
-        </button> 
-<%
-=end%>
+        <li class="nav-item">
+          <a class="nav-link" href="/"><%= current_user.username %> </a>
+        </li>
+        <li class="nav-item">
+          <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary nav-link" do %>
+            <i class="fas fa-sign-out"></i> <!-- Font Awesome icon for Log out -->
+          <% end %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to new_user_registration_path, class: "nav-link" do %>
+            <i class="fas fa-user-plus"></i> <!-- Font Awesome icon for Sign up -->
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to new_user_session_path, class: "nav-link" do %>
+            <i class="fas fa-sign-in-alt"></i> <!-- Font Awesome icon for Log in -->
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>

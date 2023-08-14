@@ -1,13 +1,31 @@
+<br />
+<br />
+<br />
 <h1>Cart</h1>
+<br />
+<br />
 
-<% @cart_products.each do |product| %>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-text"><%= product.description %></p>
-      <p class="card-text"><%= number_to_currency(product.price) %></p>
-      <%= link_to 'Remove from Cart', remove_path(id: product.id), method: :get, class: 'btn btn-danger' %>
+<% if @cart_products.any? %>
+  <% @cart_products.each do |product| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <p class="card-text"><%= product.description %></p>
+        <p class="card-text"><%= number_to_currency(product.price) %></p>
+        <%= link_to 'Remove from Cart', remove_path(id: product.id), method: :get, class: 'btn btn-danger' %>
+      </div>
     </div>
-  </div>
+    <br />
+  <% end %>
+<% else %>
+<br />
+<br />
+<br />
+  <h1>Nothing in the cart</h1>
+  <br />
+  <br />
+  <br />
   <br />
 <% end %>
+<br />
+<br />
