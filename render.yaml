@@ -1,11 +1,12 @@
 databases:
   - name: postgres
     ipAllowList: []
+    databaseName: mystore_postgres
+    user: postgres
 
 services:
   - type: web
     name: rails
-    plan: starter
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
@@ -17,8 +18,4 @@ services:
           name: postgres
           property: connectionString
 
-  - type: redis
-    name: redis
-    ipAllowList: []
-    plan: starter
-    maxmemoryPolicy: noeviction
+
